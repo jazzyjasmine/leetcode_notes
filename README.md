@@ -76,5 +76,3 @@ if text2[i - 1] == text1[j - 1]:
 else:
     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 ```
-=======
->>>>>>> refs/remotes/origin/main:README.md

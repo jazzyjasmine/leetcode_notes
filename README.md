@@ -64,7 +64,6 @@ Find successor:
 
 [285. Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)  
 [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
-<<<<<<< HEAD:notes.md
 
 &nbsp;
 
@@ -76,3 +75,10 @@ if text2[i - 1] == text1[j - 1]:
 else:
     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 ```
+
+## Single-source Shortest Path <a id="single-source-shortest-path"></a>
+### Dijkstra
+[1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/)
+
+## UnionFind
+[684. Redundant Connection](https://leetcode.com/problems/redundant-connection/)

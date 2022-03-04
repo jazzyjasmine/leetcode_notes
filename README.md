@@ -76,9 +76,29 @@ else:
     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 ```
 
+## Graph DFS <a id="graph-dfs"></a>
+- Make deep copy whenever append a list to the result sets  
+  [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
+- Build graph and find recursion  
+    [851. Loud and Rich](https://leetcode.com/problems/loud-and-rich/)
+
 ## Single-source Shortest Path <a id="single-source-shortest-path"></a>
 ### Dijkstra
-[1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/)
+Points:
+- Remember the "visited" set, i.e. S, after the vertices popped out from the heap, they were added to the S, meaning that their shortest distance from the source vertex is found and fixed, i.e. d[u] = $\delta$(u, s). 
+    
+  There are two places to use the "visited":
+  1. (Must) After a vertex is popped out from the heap, we need to check whether it is in the visited, if so, skip to the next iteration. If we don't do so, the heap will never become empty and thus endless loop.
+  2. (Optional but recommended) For each neighbor of the popped-out-vertex, check if it is in the visited set, if so, skip. Not doing so will not cause error, but it keeps the unneccessary calculation.
+
+
+Types of problems:
+- Straightforward Dijkstra with extra work in the results set  
+  [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/)
+- Add: count number of shortest path  
+  [1976. Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/)
+
+
 
 ## UnionFind
 [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/)

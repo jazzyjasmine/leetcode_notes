@@ -62,5 +62,43 @@ class Solution1134:
         else:
             adjlist[u] = [(weight, v)]
         
+        
+class Solution1786:
+    # 1786. Number of Restricted Paths From First to Last Node
+    # https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/
+    def countRestrictedPaths(self, n: int, edges: List[List[int]]) -> int:
+        adjlist = collections.defaultdict(list)
+        for u, v, weight in edges:
+            adjlist[u].append((v, weight))
+            adjlist[v].append((u, weight))
+        
+        d = {i: float("inf") for i in range(1, n + 1)}
+        d[n] = 0
+        
+        ways = {i: 0 for i in range(1, n + 1)}
+        ways[n] = 1
+        
+        heap = [(0, n)]
+        visited = set()
+        
+        while heap:
+            weight, u = heapq.heappop(heap)
+            if u in visited:
+                continue
+            visited.add(u)
             
+            for neighbor, weight in adjlist[u]:
+                if neighbor in visited:
+                    continue
+                    
+                if d[u] + weight < d[neighbor]:
+                    d[neighbor] = d[u] + weight
+                
+                if d[neighbor] > d[u]:
+                    ways[neighbor] = (ways[neighbor] + ways[u]) % (10**9 + 7)
+
+                heapq.heappush(heap, (d[neighbor], neighbor))
+        
+        return ways[1]
+              
         

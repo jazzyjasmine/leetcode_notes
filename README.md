@@ -7,12 +7,10 @@
 
 ## Binary Tree <a id="binary-tree"></a>
 
-### <span style="color:yellow">Divide & Conquer</span>
+### Divide & Conquer
 [333. Largest BST Subtree](https://leetcode.com/problems/largest-bst-subtree/)  
 
-&nbsp;
-
-### <span style="color:yellow">Construct Tree by Two Different Traversals</span>
+### Construct Tree by Two Different Traversals
 Use recursion, find root and the span of left subtree (start and end) and the span of right subtree (start and end) on the array.  
 [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  
 ```python
@@ -45,11 +43,11 @@ class Solution:
 
 ## Binary Search Tree (BST) <a id="binary-search-tree"></a>
 
-### <span style="color:yellow">BST Validation</span>
+### BST Validation
 The max value in left subtree is smaller than the root value and the min value in right subtree is larger than the root value.  
 [333. Largest BST Subtree](https://leetcode.com/problems/largest-bst-subtree/)
 
-### <span style="color:yellow">Predecessor & Successor</span>
+### Predecessor & Successor
 Predecessor: The prev node, i.e. the largest node before (smaller than) the current one.  
 
 Find predecessor:  
@@ -76,11 +74,26 @@ else:
     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 ```
 
-## Graph DFS <a id="graph-dfs"></a>
+&nbsp;
+
+## Graph: DFS <a id="graph-dfs"></a>
 - Make deep copy whenever append a list to the result sets  
   [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
 - Build graph and find recursion  
     [851. Loud and Rich](https://leetcode.com/problems/loud-and-rich/)
+
+&nbsp;
+
+## Graph: Topological Sorting<a id="graph-topological-sorting"></a>
+- DAG &harr; At least one topological sorting.  
+  If DAG(directed acyclic graph), it must have at least one topological sorting.  
+  If the graph has topological sorting, it must be a DAG.
+- Build graph and identify topological sorting (identify DEPENDENCIES/PREREQUISITES)
+- No need to keep "visited" set  
+[802. Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/)  
+[2115. Find All Possible Recipes from Given Supplies](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/)  
+
+&nbsp;
 
 ## Single-source Shortest Path <a id="single-source-shortest-path"></a>
 ### Dijkstra
@@ -96,9 +109,10 @@ Types of problems:
 - Straightforward Dijkstra with extra work in the results set  
   [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/)
 - Add: count number of shortest path  
-  [1976. Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/)
+  [1976. Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/)  
+  [1786. Number of Restricted Paths From First to Last Node](https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/)
 
-
+&nbsp;
 
 ## UnionFind
 [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/)

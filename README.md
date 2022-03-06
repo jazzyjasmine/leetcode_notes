@@ -7,13 +7,12 @@
 
 ## Binary Tree <a id="binary-tree"></a>
 
-### Divide & Conquer
+### 1. Divide & Conquer
 [1315. Sum of Nodes with Even-Valued Grandparent](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/)  
-[333. Largest BST Subtree](https://leetcode.com/problems/largest-bst-subtree/)  
-[1315. Sum of Nodes with Even-Valued Grandparent](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/)  
+[333. Largest BST Subtree](https://leetcode.com/problems/largest-bst-subtree/)
 
 
-### Construct Tree by Two Different Traversals
+### 2. Construct Tree by Two Different Traversals
 Use recursion, find root and the span of left subtree (start and end) and the span of right subtree (start and end) on the array.  
 [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  
 ```python
@@ -46,11 +45,11 @@ class Solution:
 
 ## Binary Search Tree (BST) <a id="binary-search-tree"></a>
 
-### BST Validation
+### 1. BST Validation
 The max value in left subtree is smaller than the root value and the min value in right subtree is larger than the root value.  
 [333. Largest BST Subtree](https://leetcode.com/problems/largest-bst-subtree/)
 
-### Predecessor & Successor
+### 2. Predecessor & Successor
 Predecessor: The prev node, i.e. the largest node before (smaller than) the current one.  
 
 Find predecessor:  
@@ -74,7 +73,7 @@ Find successor:
 To avoid repeated calculation. Substitute divide and conquer for memoization search is the subproblems have overlaps.  
 [120. Triangle](https://leetcode.com/problems/triangle/)
 
-### Total number of paths/strategies
+### 1. Total number of paths/strategies
 [62. Unique Paths](https://leetcode.com/problems/unique-paths/)  
 [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
 

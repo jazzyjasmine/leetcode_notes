@@ -5,8 +5,35 @@ class TreeNode:
         self.left = None
         self.right = None
 
-class Solution:
+class Solution1315:
+    """Divide and Conquer"""
+    # 1315. Sum of Nodes with Even-Valued Grandparent
+    # https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
+    def sumEvenGrandparent(self, root: TreeNode) -> int:
+        ans, _ = self.helper(root)
+        return ans
+    
+    def helper(self, root):
+        if not root:
+            return 0, 0
+        
+        left, left_snd_sum = self.helper(root.left)
+        right, right_snd_sum = self.helper(root.right)
+        
+        curr_snd_sum = 0
+        
+        if root.left:
+            curr_snd_sum += root.left.val
+        if root.right:
+            curr_snd_sum += root.right.val
+        
+        if root.val % 2 != 0:
+            return left + right, curr_snd_sum
+        
+        return left + right + left_snd_sum + right_snd_sum, curr_snd_sum
 
+
+class Solutions:
     # 106. Construct Binary Tree from Inorder and Postorder Traversal
     def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
         if not inorder or not postorder:

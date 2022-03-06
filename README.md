@@ -10,6 +10,8 @@
 ### Divide & Conquer
 [1315. Sum of Nodes with Even-Valued Grandparent](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/)  
 [333. Largest BST Subtree](https://leetcode.com/problems/largest-bst-subtree/)  
+[1315. Sum of Nodes with Even-Valued Grandparent](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/)  
+
 
 ### Construct Tree by Two Different Traversals
 Use recursion, find root and the span of left subtree (start and end) and the span of right subtree (start and end) on the array.  
@@ -72,6 +74,12 @@ Find successor:
 To avoid repeated calculation. Substitute divide and conquer for memoization search is the subproblems have overlaps.  
 [120. Triangle](https://leetcode.com/problems/triangle/)
 
+### Total number of paths/strategies
+[62. Unique Paths](https://leetcode.com/problems/unique-paths/)  
+[63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
+
+
+
 [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
 ```python
 if text2[i - 1] == text1[j - 1]:
@@ -81,9 +89,6 @@ else:
 ```
 
 &nbsp;
-
-## Graph
-
 
 ## Graph: DFS <a id="graph-dfs"></a>
 - Make deep copy whenever append a list to the result sets  

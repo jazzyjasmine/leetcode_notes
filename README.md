@@ -66,6 +66,11 @@ Find successor:
 &nbsp;
 
 ## Dynamic Programming <a id="dynamic-programming"></a>
+
+### Memoization Search
+To avoid repeated calculation. Substitute divide and conquer for memoization search is the subproblems have overlaps.  
+[120. Triangle](https://leetcode.com/problems/triangle/)
+
 [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
 ```python
 if text2[i - 1] == text1[j - 1]:

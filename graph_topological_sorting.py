@@ -1,5 +1,33 @@
-from collections import deque
+import collections
 
+
+class Solution1136:
+    # 1136. Parallel Courses
+    # https://leetcode.com/problems/parallel-courses/
+    def minimumSemesters(self, n: int, relations: List[List[int]]) -> int:
+        adjlist = {i: [] for i in range(1, n + 1)}
+        indegrees = {i: 0 for i in range(1, n + 1)}
+        for u, v in relations:
+            adjlist[u].append(v)
+            indegrees[v] += 1
+        
+        queue = collections.deque([k for k in indegrees if indegrees[k] == 0])
+        
+        semester_num = 0
+        
+        visited = set()
+        
+        while queue:
+            semester_num += 1
+            for _ in range(len(queue)):
+                curr = queue.popleft()
+                visited.add(curr)
+                for neighbor in adjlist[curr]:
+                    indegrees[neighbor] -= 1
+                    if indegrees[neighbor] == 0:
+                        queue.append(neighbor)
+                
+        return -1 if len(visited) != n else semester_num
 
 
 class Solution802:
@@ -15,7 +43,7 @@ class Solution802:
                 adjlist[node].append(index)
                 indegrees[index] += 1
         
-        queue = deque([i for i in indegrees if indegrees[i] == 0])
+        queue = collections.deque([i for i in indegrees if indegrees[i] == 0])
         
         while queue:
             curr = queue.popleft()
@@ -38,7 +66,7 @@ class Solution2115:
     # https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/
     def findAllRecipes(self, recipes: List[str], ingredients: List[List[str]], supplies: List[str]) -> List[str]:
         adjlist, indegrees = self.get_adjlist_and_indegrees(recipes, ingredients)
-        queue = deque([i for i in indegrees if indegrees[i] == 0])
+        queue = collections.deque([i for i in indegrees if indegrees[i] == 0])
         answers = []
         supplies = set(supplies)
         

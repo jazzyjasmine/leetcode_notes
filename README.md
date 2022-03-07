@@ -67,33 +67,24 @@ Find successor:
 
 &nbsp;
 
-## Dynamic Programming <a id="dynamic-programming"></a>
+## Graph: General<a id="graph-general"></a>
 
-### Memoization Search
-To avoid repeated calculation. Substitute divide and conquer for memoization search is the subproblems have overlaps.  
-[120. Triangle](https://leetcode.com/problems/triangle/)
-
-### 1. Total number of paths/strategies
-[62. Unique Paths](https://leetcode.com/problems/unique-paths/)  
-[63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
-
-
-
-[1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
-```python
-if text2[i - 1] == text1[j - 1]:
-    dp[i][j] = dp[i - 1][j - 1] + 1
-else:
-    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-```
+### Detect Cycle
+Key: If there is a neighbor that has been visited, then there is a cycle.  
+Can be solved by DFS, BFS, UnionFind.  
+- For undirected graph, what's more complicated is that, each edge has two directions, so when a neighbor of the current node is the parent of current node, even though this neighbor is in the "visited" set, we should not say there is a cycle. We should exclude this scenario after checking whether a neighbor is in "visited".  
+- For the DFS solution, we do not use backtracking (e.g. visited.add(neighbor), dfs(neighbor), visited.remove(neighbor)) because we need to get all visited sub nodes when we are to mark the current node as black (finish probing). Backtracking is used for getting all paths from a start to an end. After finish probing all sub nodes, backtracking keeps the "visited" set only the previous nodes till the current node, no sub nodes.  
+[261. Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)
 
 &nbsp;
 
 ## Graph: DFS <a id="graph-dfs"></a>
+- White: Not visited; Gray: Visited, probing; Black: Visited, finish probing.   
 - Make deep copy whenever append a list to the result sets  
   [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
 - Build graph and find recursion  
     [851. Loud and Rich](https://leetcode.com/problems/loud-and-rich/)
+
 
 &nbsp;
 
@@ -102,9 +93,10 @@ else:
   If DAG(directed acyclic graph), it must have at least one topological sorting.  
   If the graph has topological sorting, it must be a DAG.
 - Build graph and identify topological sorting (identify DEPENDENCIES/PREREQUISITES)
-- No need to keep "visited" set  
+- Use "visited" set to check if topological sorting exists   
 [802. Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/)  
 [2115. Find All Possible Recipes from Given Supplies](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/)  
+[1136. Parallel Courses](https://leetcode.com/problems/parallel-courses/) 
 
 &nbsp;
 
@@ -129,3 +121,34 @@ Types of problems:
 
 ## UnionFind
 [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/)
+
+&nbsp;
+
+## Dynamic Programming <a id="dynamic-programming"></a>
+Categories by problem types:
+### Memoization Search
+To avoid repeated calculation. Substitute divide and conquer for memoization search is the subproblems have overlaps.  
+[120. Triangle](https://leetcode.com/problems/triangle/)
+
+### Extreme Values
+[198. House Robber](https://leetcode.com/problems/house-robber/)  
+[1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
+```python
+if text2[i - 1] == text1[j - 1]:
+    dp[i][j] = dp[i - 1][j - 1] + 1
+else:
+    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+```  
+
+### Total number of paths/strategies
+[62. Unique Paths](https://leetcode.com/problems/unique-paths/)  
+[63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
+
+### Feasibility
+
+&nbsp;
+
+Categories by solution types:
+### Prefix: Segmentation
+[139. Word Break](https://leetcode.com/problems/word-break/)  
+[140. Word Break II](https://leetcode.com/problems/word-break-ii/)

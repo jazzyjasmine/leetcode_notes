@@ -2,10 +2,15 @@
 ## Topics
 - [Binary Tree](#binary-tree)
 - [Binary Search Tree (BST)](#binary-search-tree)
+- [Graph: General](#graph-general)
+- [Graph: DFS](#graph-dfs)
+- [Graph: Topological Sorting](#graph-topological-sorting)
+- [Single-source Shortest Path](#single-source-shortest-path)
+- [Dynamic Programming](#dynamic-programming)
 
 &nbsp;
 
-## Binary Tree <a id="binary-tree"></a>
+## 🦀 Binary Tree <a id="binary-tree"></a>
 
 ### 1. Divide & Conquer
 [1315. Sum of Nodes with Even-Valued Grandparent](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/)  
@@ -43,7 +48,7 @@ class Solution:
 
 &nbsp;
 
-## Binary Search Tree (BST) <a id="binary-search-tree"></a>
+## 🦀 Binary Search Tree (BST) <a id="binary-search-tree"></a>
 
 ### 1. BST Validation
 The max value in left subtree is smaller than the root value and the min value in right subtree is larger than the root value.  
@@ -67,7 +72,7 @@ Find successor:
 
 &nbsp;
 
-## Graph: General<a id="graph-general"></a>
+## 🦀 Graph: General<a id="graph-general"></a>
 
 ### Detect Cycle
 Key: If there is a neighbor that has been visited, then there is a cycle.  
@@ -78,7 +83,7 @@ Can be solved by DFS, BFS, UnionFind.
 
 &nbsp;
 
-## Graph: DFS <a id="graph-dfs"></a>
+## 🦀 Graph: DFS <a id="graph-dfs"></a>
 - White: Not visited; Gray: Visited, probing; Black: Visited, finish probing.   
 - Make deep copy whenever append a list to the result sets  
   [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
@@ -88,7 +93,7 @@ Can be solved by DFS, BFS, UnionFind.
 
 &nbsp;
 
-## Graph: Topological Sorting<a id="graph-topological-sorting"></a>
+## 🦀 Graph: Topological Sorting<a id="graph-topological-sorting"></a>
 - DAG &harr; At least one topological sorting.  
   If DAG(directed acyclic graph), it must have at least one topological sorting.  
   If the graph has topological sorting, it must be a DAG.
@@ -100,7 +105,7 @@ Can be solved by DFS, BFS, UnionFind.
 
 &nbsp;
 
-## Single-source Shortest Path <a id="single-source-shortest-path"></a>
+## 🦀 Single-source Shortest Path <a id="single-source-shortest-path"></a>
 ### Dijkstra
 Points:
 - Remember the "visited" set, i.e. S, after the vertices popped out from the heap, they were added to the S, meaning that their shortest distance from the source vertex is found and fixed, i.e. d[u] = $\delta$(u, s). 
@@ -119,12 +124,12 @@ Types of problems:
 
 &nbsp;
 
-## UnionFind
+### UnionFind
 [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/)
 
 &nbsp;
 
-## Dynamic Programming <a id="dynamic-programming"></a>
+## 🦀 Dynamic Programming <a id="dynamic-programming"></a>
 Categories by problem types:
 ### Memoization Search
 To avoid repeated calculation. Substitute divide and conquer for memoization search is the subproblems have overlaps.  

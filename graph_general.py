@@ -122,9 +122,11 @@ class Solution261DFSColor:
                 continue
             
             if color[neighbor] == "black":
+                # if neighbor is black, that neighbor is in a different connected component
                 continue
             
             if color[neighbor] == "gray":
+                # if neighbor is gray, that neighbor is in same connected component and thus forms a cycle
                 return
             
             self.dfs(neighbor, node, color, adjlist)

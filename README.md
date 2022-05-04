@@ -67,6 +67,8 @@ Find successor:
 1. If node has right child: One step right and then always left.
 2. If node has no right child: The first node that is not having a "right" relationship with its parent.
 
+![bst_successor](/diagrams/bst_successor.png)
+
 [285. Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)  
 [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
 

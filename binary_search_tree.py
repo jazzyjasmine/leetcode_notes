@@ -6,6 +6,31 @@ class TreeNode:
         self.right = right
 
 
+class Solution426:
+    # 426. Convert Binary Search Tree to Sorted Doubly Linked List
+    # https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
+    def treeToDoublyList(self, root: 'Optional[Node]') -> 'Optional[Node]':
+        if not root:
+            return None
+        
+        stack = []
+        dummy = Node(0)
+        prev = dummy
+        node = root
+        
+        while stack or node:
+            while node:
+                stack.append(node)
+                node = node.left
+            node = stack.pop()
+            node.left, prev.right, prev = prev, node, node
+            node = node.right
+        
+        prev.right, dummy.right.left = dummy.right, prev
+        
+        return dummy.right
+
+
 class Solution450:
     # 450. Delete Node in a BST
     # Solution 1

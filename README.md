@@ -7,6 +7,8 @@
 - [Graph: Topological Sorting](#graph-topological-sorting)
 - [Single-source Shortest Path](#single-source-shortest-path)
 - [Dynamic Programming](#dynamic-programming)
+- [String](#string)
+- [Linked List](#linked-list)
 
 &nbsp;
 
@@ -45,6 +47,10 @@ class Solution:
 [1008. Construct Binary Search Tree from Preorder Traversal](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/)
 
 
+### 3. LCA (Lowest Common Ancestor)
+- Given parent node: Use math. Let $a$ denote the distance between node p and lca, $b$ denote the distance between node q and lca, $c$ denote the distance between lca and the root. We have $a + c + b = b + c + a$. So they will meet at the lca eventually.   
+  [1650. Lowest Common Ancestor of a Binary Tree III](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/)
+
 
 &nbsp;
 
@@ -69,6 +75,12 @@ Find successor:
 
 ![bst_successor](/diagrams/bst_successor.png)
 
+Typical BST predecessor/successor problem:  
+📎 [426. Convert Binary Search Tree to Sorted Doubly Linked List](https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/)  
+📎 [285. Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)  
+📎 [99. Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/)
+
+Other BST problems:  
 [285. Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)  
 [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
 
@@ -159,3 +171,16 @@ Categories by solution types:
 ### Prefix: Segmentation
 [139. Word Break](https://leetcode.com/problems/word-break/)  
 [140. Word Break II](https://leetcode.com/problems/word-break-ii/)
+
+&nbsp;
+
+## 🦀 String <a id="string"></a>
+
+[408. Valid Word Abbreviation](https://leetcode.com/problems/valid-word-abbreviation/)  
+Brute force. Use two pointers. Be careful about corner cases.  
+[791. Custom Sort String](https://leetcode.com/problems/custom-sort-string/)  
+Use Counter to get the show times of each character, sort those in "order" first (pop while sorting).
+
+&nbsp;
+
+## 🦀 Linked List <a id="linked-list"></a>

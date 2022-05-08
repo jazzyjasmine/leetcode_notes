@@ -8,6 +8,22 @@ class TreeNode:
         self.left = None
         self.right = None
 
+class Solution1650:
+    # 1650. Lowest Common Ancestor of a Binary Tree III
+    # https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/
+    class Node:
+        def __init__(self, val):
+            self.val = val
+            self.left = None
+            self.right = None
+            self.parent = None
+
+    def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
+        p_dup, q_dup = p, q
+        while p_dup != q_dup:
+            p_dup = p_dup.parent if p_dup.parent else q
+            q_dup = q_dup.parent if q_dup.parent else p
+        return p_dup
 
 class Solution2196:
     # 2196. Create Binary Tree From Descriptions

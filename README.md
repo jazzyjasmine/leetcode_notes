@@ -184,3 +184,5 @@ Use Counter to get the show times of each character, sort those in "order" first
 &nbsp;
 
 ## 🦀 Linked List <a id="linked-list"></a>
+- DummyHead (same with result initially)  
+  [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/submissions/)

@@ -1,4 +1,5 @@
 import random
+from typing import List
 
 
 class RandomizedSetSolution380:
@@ -73,4 +74,39 @@ class UndergroundSystemSolution1396:
     def getAverageTime(self, startStation: str, endStation: str) -> float:
         duration_list = self.durations[(startStation, endStation)]
         return sum(duration_list) / len(duration_list)
+
+
+class WordDistanceSolution244:
+    # 244. Shortest Word Distance II
+    # Time: O(n), Space: O(n)
+    # shortest: Find min diff between two sorted lists is O(max(k, l)),
+    # where k and l are the number of occurences of two words. k = O(n),
+    # l = O(n), therefore time is O(n). No need O(n^2).
+    # reference: https://leetcode.com/problems/shortest-word-distance-ii/solution/
+    # https://leetcode.com/problems/shortest-word-distance-ii/
+
+    def __init__(self, wordsDict: List[str]):
+        self.word_to_index = {word: [] for word in wordsDict}
+        for index, word in enumerate(wordsDict):
+            self.word_to_index[word].append(index)
+               
+
+    def shortest(self, word1: str, word2: str) -> int:
+        ptr1, ptr2 = 0, 0
+        word1_indexes = self.word_to_index[word1]
+        word2_indexes = self.word_to_index[word2]
+        shortest_distance = float('inf')
         
+        while ptr1 < len(word1_indexes) and ptr2 < len(word2_indexes):
+            shortest_distance = min(shortest_distance, abs(word1_indexes[ptr1] - word2_indexes[ptr2]))
+            if word1_indexes[ptr1] > word2_indexes[ptr2]:
+                ptr2 += 1
+            else:
+                ptr1 += 1
+        
+        return shortest_distance
+            
+        
+# Your WordDistance object will be instantiated and called as such:
+# obj = WordDistance(wordsDict)
+# param_1 = obj.shortest(word1,word2)

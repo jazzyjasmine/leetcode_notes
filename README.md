@@ -194,4 +194,5 @@ Use Counter to get the show times of each character, sort those in "order" first
 - Data structure combination  
   [380. Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)
 - Direct data structure (non-combination)  
-  [1396. Design Underground System](https://leetcode.com/problems/design-underground-system/)
+  [1396. Design Underground System](https://leetcode.com/problems/design-underground-system/)  
+  [244. Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii/)

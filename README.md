@@ -186,3 +186,12 @@ Use Counter to get the show times of each character, sort those in "order" first
 ## 🦀 Linked List <a id="linked-list"></a>
 - DummyHead (same with result initially)  
   [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/submissions/)
+
+
+&nbsp;
+
+## 🦀 Data Structure <a id="data-structure"></a>
+- Data structure combination  
+  [380. Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)
+- Direct data structure (non-combination)  
+  [1396. Design Underground System](https://leetcode.com/problems/design-underground-system/)

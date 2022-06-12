@@ -4,7 +4,7 @@ import random
 class RandomizedSetSolution380:
     # 380. Insert Delete GetRandom O(1)
     # https://leetcode.com/problems/insert-delete-getrandom-o1/
-    # list + hashmap
+    # Combination: list + hashmap
     # list: insert O(1), getRandom O(1), delete O(n) because iterate through the list
     # hashset: insert O(1), getRandom N/A because no index, delete O(1)
 
@@ -45,3 +45,32 @@ class RandomizedSetSolution380:
 # param_1 = obj.insert(val)
 # param_2 = obj.remove(val)
 # param_3 = obj.getRandom()
+
+
+class UndergroundSystemSolution1396:
+    # 1396. Design Underground System
+    # Non-combination: hashmap
+    # https://leetcode.com/problems/design-underground-system/
+
+    def __init__(self):
+        self.checkedin = {}
+        self.durations = {}
+        
+
+    def checkIn(self, id: int, stationName: str, t: int) -> None:
+        self.checkedin[id] = [stationName, t]
+
+        
+    def checkOut(self, id: int, stationName: str, t: int) -> None:
+        startStation, startTime = self.checkedin.pop(id)
+        duration = t - startTime
+        if (startStation, stationName) not in self.durations:
+            self.durations[(startStation, stationName)] = [duration]
+        else:
+            self.durations[(startStation, stationName)].append(duration)
+        
+        
+    def getAverageTime(self, startStation: str, endStation: str) -> float:
+        duration_list = self.durations[(startStation, endStation)]
+        return sum(duration_list) / len(duration_list)
+        

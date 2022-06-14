@@ -196,3 +196,12 @@ Use Counter to get the show times of each character, sort those in "order" first
 - Direct data structure (non-combination)  
   [1396. Design Underground System](https://leetcode.com/problems/design-underground-system/)  
   [244. Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii/)
+
+
+&nbsp;
+
+## 🦀 Modular Arithmetic <a id="modular-arithmetic"></a>
+- Subtraction  
+  [523. Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum/)
+- Addition  
+  [1010. Pairs of Songs With Total Durations Divisible by 60](https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/)

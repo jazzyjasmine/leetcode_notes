@@ -1,3 +1,6 @@
+from typing import Optional, List
+
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -259,4 +262,24 @@ class Solution99:
             stack.append(root)
             root = root.left
             
+
+class Solution669:
+    # 669. Trim a Binary Search Tree
+    # Recursion
+    # https://leetcode.com/problems/trim-a-binary-search-tree/
+    def trimBST(self, root: Optional[TreeNode], low: int, high: int) -> Optional[TreeNode]:
+        if not root:
+            return root
+        
+        if root.val > high:
+            return self.trimBST(root.left, low, high)
+        
+        if root.val < low:
+            return self.trimBST(root.right, low, high)
+        
+        left_subtree = self.trimBST(root.left, low, high)
+        right_subtree = self.trimBST(root.right, low, high)
+        root.left = left_subtree
+        root.right = right_subtree
+        return root 
         

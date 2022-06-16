@@ -52,6 +52,12 @@ class Solution:
   [1650. Lowest Common Ancestor of a Binary Tree III](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/)
 
 
+### 4. Height of binary tree
+height(node) = 1 + max(height(node.left) + height(node.right))  
+Example:    
+  [366. Find Leaves of Binary Tree](https://leetcode.com/problems/find-leaves-of-binary-tree/) (Topological sorting also works for this one. Simply treat leaves as nodes with indegree of 0.)
+
+
 &nbsp;
 
 ## 🦀 Binary Search Tree (BST) <a id="binary-search-tree"></a>
@@ -82,7 +88,12 @@ Typical BST predecessor/successor problem:
 
 Other BST problems:  
 [285. Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)  
-[450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
+[450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)  
+
+
+BST problems using recursion:
+[https://leetcode.com/problems/trim-a-binary-search-tree/](https://leetcode.com/problems/trim-a-binary-search-tree/)  
+
 
 &nbsp;
 
@@ -204,4 +215,21 @@ Use Counter to get the show times of each character, sort those in "order" first
 - Subtraction  
   [523. Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum/)
 - Addition  
-  [1010. Pairs of Songs With Total Durations Divisible by 60](https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/)
+  [1010. Pairs of Songs With Total Durations Divisible by 60](https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/)  
+
+&nbsp;
+
+## 🦀 Python Tricks <a id="python-tricks"></a>
+### Sort dictionary(hashmap) by key
+```python
+>> a = {2: [3,4], 1: [5,6]}
+>> sorted(a.items())
+[(1, [5, 6]), (2, [3, 4])]
+```
+### Append into nested list
+```python
+>> a = [[1], [1], [1]]
+>> a[1].append(2)
+>> a
+[[1], [1, 2], [1]]
+```

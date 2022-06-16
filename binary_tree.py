@@ -3,10 +3,67 @@ from typing import List, Optional, Tuple, Dict
 
 # Definition for a binary tree node.
 class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution366_1_NonOptimal:
+    # 366. Find Leaves of Binary Tree
+    # DFS + Hashmap
+    # Non-optimal solution with sorting. Time: O(nlogn); Space: O(n)
+    # https://leetcode.com/problems/find-leaves-of-binary-tree/
+    def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
+        height_to_nodes = {}
+        self.get_heights(height_to_nodes, root)
+        return [pair[1] for pair in sorted(height_to_nodes.items())]
+    
+    
+    def get_heights(self, height_to_nodes, root):
+        if not root:
+            return -1
+        
+        left_height = self.get_heights(height_to_nodes, root.left)
+        right_height = self.get_heights(height_to_nodes, root.right)
+        curr_height = max(left_height, right_height) + 1
+        
+        if curr_height in height_to_nodes:
+            height_to_nodes[curr_height].append(root.val)
+        else:
+            height_to_nodes[curr_height] = [root.val]
+        
+        return curr_height
+
+
+class Solution366_2_Optimal:
+    # 366. Find Leaves of Binary Tree
+    # DFS
+    # Optimal solution without sorting. Time: O(n); Space: O(n)
+    # https://leetcode.com/problems/find-leaves-of-binary-tree/
+    def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
+        results = []
+        self.get_heights(root, results)
+        return results
+    
+    
+    def get_heights(self, root, results):
+        if not root:
+            return -1
+        
+        left_height = self.get_heights(root.left, results)
+        right_height = self.get_heights(root.right, results)
+        curr_height = max(left_height, right_height) + 1
+        
+        # the node's height is exactly the index of the list in the results
+        # insert into results instead of sorting
+        if curr_height == len(results):
+            results.append([root.val])
+        else:
+            results[curr_height].append(root.val)
+        
+        return curr_height
+
 
 class Solution1650:
     # 1650. Lowest Common Ancestor of a Binary Tree III

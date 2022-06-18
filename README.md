@@ -197,6 +197,8 @@ Use Counter to get the show times of each character, sort those in "order" first
 ## 🦀 Linked List <a id="linked-list"></a>
 - DummyHead (same with result initially)  
   [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/submissions/)
+- Others  
+  [708. Insert into a Sorted Circular Linked List](https://leetcode.com/problems/insert-into-a-sorted-circular-linked-list/)
 
 
 &nbsp;

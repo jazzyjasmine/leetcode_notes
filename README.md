@@ -221,6 +221,13 @@ Use Counter to get the show times of each character, sort those in "order" first
 
 &nbsp;
 
+## 🦀 Monotonic Stack <a id="monotonic-stack"></a>
+Monotonic stacks are a good option when a problem involves comparing the size of numeric elements, with their order being relevant.  
+Tricky part: The time complexity is O(n) though there is nested loop.  
+[739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
+
+&nbsp;
+
 ## 🦀 Python Tricks <a id="python-tricks"></a>
 ### Sort dictionary(hashmap) by key
 ```python

@@ -221,6 +221,12 @@ Use Counter to get the show times of each character, sort those in "order" first
 
 &nbsp;
 
+## 🦀 Binary Search <a id="binary-search"></a>
+Advanced (binary search not at a glance, need detection):  
+- [1060. Missing Element in Sorted Array](https://leetcode.com/problems/missing-element-in-sorted-array/)
+
+&nbsp;
+
 ## 🦀 Monotonic Stack <a id="monotonic-stack"></a>
 Monotonic stacks are a good option when a problem involves comparing the size of numeric elements, with their order being relevant.  
 Tricky part: The time complexity is O(n) though there is nested loop.  

@@ -153,3 +153,25 @@ class Solution106:
         root.right = self.buildTree(inorder[root_pos + 1: len(inorder)], postorder[root_pos: -1])
         
         return root
+
+
+class Solution543:
+    # 543. Diameter of Binary Tree
+    # Divide and conquer
+    # https://leetcode.com/problems/diameter-of-binary-tree/
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        _, ans = self.helper(root)
+        return ans
+    
+    def helper(self, root):
+        if not root:
+            return -1, -1
+        
+        left_depth, left_max = self.helper(root.left)
+        right_depth, right_max = self.helper(root.right)
+        
+        curr_depth = max(left_depth, right_depth) + 1
+        possible_max = right_depth + left_depth + 2
+        
+        return curr_depth, max(possible_max, right_max, left_max)
+        

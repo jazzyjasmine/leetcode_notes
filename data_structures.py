@@ -1,5 +1,6 @@
 import random
 from typing import List
+from collections import deque
 
 
 class RandomizedSetSolution380:
@@ -110,3 +111,23 @@ class WordDistanceSolution244:
 # Your WordDistance object will be instantiated and called as such:
 # obj = WordDistance(wordsDict)
 # param_1 = obj.shortest(word1,word2)
+
+
+class MovingAverage346:
+    # 346. Moving Average from Data Stream
+    # https://leetcode.com/problems/moving-average-from-data-stream/
+
+    def __init__(self, size: int):
+        self.count = 0
+        self.size = size
+        self.queue = deque([])
+
+    def next(self, val: int) -> float:
+        if self.count == self.size:
+            self.queue.popleft()
+            self.queue.append(val)
+        else:
+            self.queue.append(val)
+            self.count += 1
+        return sum(self.queue) / self.count
+        

@@ -46,3 +46,37 @@ class Solution670:
         list_num[change_pos], list_num[change_max_pos] = list_num[change_max_pos], list_num[change_pos]
         
         return int("".join([str(x) for x in list_num]))
+
+
+class Solution498:
+    # 498. Diagonal Traverse
+    # Simulation
+    # https://leetcode.com/problems/diagonal-traverse/
+    def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
+        up = True
+        i, j = 0, 0
+        ans = []
+        while self.isValid(mat, i, j):
+            ans.append(mat[i][j])
+            i, j, up = self.getNextStep(mat, i, j, up)
+        return ans
+    
+    def getNextStep(self, mat, i, j, up):
+        if up:
+            ni, nj = i - 1, j + 1
+            if not self.isValid(mat, ni, nj):
+                up = False
+                ni, nj = i, j + 1
+                if not self.isValid(mat, ni, nj):
+                    ni, nj = i + 1, j
+        else:
+            ni, nj = i + 1, j - 1
+            if not self.isValid(mat, ni, nj):
+                up = True
+                ni, nj = i + 1, j
+                if not self.isValid(mat, ni, nj):
+                    ni, nj = i, j + 1
+        return (ni, nj, up) if self.isValid(mat, ni, nj) else (-1, -1, up)
+    
+    def isValid(self, mat, ni, nj):
+        return 0 <= ni < len(mat) and 0 <= nj < len(mat[0])
